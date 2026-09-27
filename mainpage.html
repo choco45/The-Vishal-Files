@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vishal Files - Evidence</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)),
+                url("background.jpg") center center / cover fixed no-repeat;
+
+            color: #f5f5f5;
+            font-family: Arial, Helvetica, sans-serif;
+
+            text-transform: uppercase;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 70px 30px;
+        }
+
+        /* MUSIC CONTROL */
+
+        #music-control {
+            position: fixed;
+
+            bottom: 20px;
+            right: 20px;
+
+            padding: 10px 15px;
+
+            background: rgba(0, 0, 0, 0.85);
+
+            border: 1px solid #444;
+
+            color: #ffffff;
+
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+
+            cursor: pointer;
+
+            z-index: 9999;
+
+            transition: 0.2s ease;
+        }
+
+        #music-control:hover {
+            border-color: #d00000;
+            color: #d00000;
+        }
+
+
+        /* PAGE HEADER */
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            margin: 0;
+
+            font-size: 44px;
+            letter-spacing: 5px;
+
+            border-bottom: 2px solid #d00000;
+            padding-bottom: 15px;
+
+            animation: glitch 4s infinite;
+        }
+
+        .header p {
+            margin-top: 15px;
+
+            color: #d00000;
+
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 4px;
+
+            animation: flicker 3s infinite;
+        }
+
+
+        /* EVIDENCE BOX */
+
+        .evidence {
+            display: flex;
+
+            width: 100%;
+
+            margin-bottom: 35px;
+
+            border: 1px solid #333;
+
+            background: rgba(0, 0, 0, 0.65);
+
+            transition: border-color 0.2s ease;
+        }
+
+        .evidence:hover {
+            border-color: #d00000;
+        }
+
+
+        /* IMAGE */
+
+        .image {
+            width: 40%;
+            min-height: 250px;
+
+            border-right: 2px solid #d00000;
+
+            overflow: hidden;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            filter: grayscale(100%);
+
+            transition: 0.3s ease;
+        }
+
+        .evidence:hover .image img {
+            filter: grayscale(0%);
+            transform: scale(1.03);
+        }
+
+
+        /* TEXT */
+
+        .content {
+            width: 60%;
+
+            padding: 30px;
+        }
+
+        .content .number {
+            color: #d00000;
+
+            font-size: 11px;
+            font-weight: bold;
+
+            letter-spacing: 3px;
+        }
+
+        .content h2 {
+            margin: 10px 0 18px;
+
+            font-size: 25px;
+            letter-spacing: 2px;
+        }
+
+        .content p {
+            margin: 0 0 12px;
+
+            color: #bdbdbd;
+
+            font-size: 14px;
+            line-height: 1.7;
+
+            text-transform: none;
+        }
+
+
+        /* GLITCH */
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+
+            92% {
+                transform: translate(0);
+            }
+
+            93% {
+                transform: translate(-2px, 1px);
+            }
+
+            94% {
+                transform: translate(2px, -1px);
+            }
+
+            95% {
+                transform: translate(-1px, 0);
+            }
+
+            96% {
+                transform: translate(1px, 1px);
+            }
+
+            97% {
+                transform: translate(0);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+
+
+        /* FLICKER */
+
+        @keyframes flicker {
+            0%,
+            18%,
+            22%,
+            63%,
+            64%,
+            65%,
+            100% {
+                opacity: 1;
+            }
+
+            19%,
+            21%,
+            62% {
+                opacity: 0.4;
+            }
+
+            23% {
+                opacity: 0.8;
+            }
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            main {
+                padding: 50px 20px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .evidence {
+                display: block;
+            }
+
+            .image {
+                width: 100%;
+                height: 220px;
+
+                border-right: none;
+                border-bottom: 2px solid #d00000;
+            }
+
+            .content {
+                width: 100%;
+                padding: 25px;
+            }
+
+            .content h2 {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND MUSIC -->
+
+    <audio id="background-music" autoplay loop>
+        <source src="audio1.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- MUSIC CONTROL -->
+
+    <button id="music-control">
+        MUSIC: ON
+    </button>
+
+
+    <main>
+
+        <div class="header">
+            <h1>The Vishal Files</h1>
+            <p>Evidence / Investigation Archive</p>
+        </div>
+
+
+        <!-- EVIDENCE 01 -->
+
+        <section class="evidence">
+
+            <div class="image">
+                <img src="image1.jpg" alt="Evidence 01">
+            </div>
+
+            <div class="content">
+                <span class="number">FILE 001</span>
+
+                <h2>Fame and Popularity</h2>
+
+                <p>
+                    Vishal get popularity in the his collegs by accuring 20+ backs in 4 semestars.
+                    Every people in his college knows him, +19980 Aura points. -20 on backs.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- EVIDENCE 02 -->
+
+        <section class="evidence">
+
+            <div class="image">
+                <img src="image2.jpg" alt="Evidence 02">
+            </div>
+
+            <div class="content">
+                <span class="number">FILE 002</span>
+
+                <h2>Personality</h2>
+
+                <p>
+                    Vishal has mixxed Personality, one of them is highly toxicity,
+                    some times our calss teacher says "Dont sit with him".
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- EVIDENCE 03 -->
+
+        <section class="evidence">
+
+            <div class="image">
+                <img src="image3.jpg" alt="Evidence 03">
+            </div>
+
+            <div class="content">
+                <span class="number">FILE 003</span>
+
+                <h2>Addictions 1</h2>
+
+                <p>
+                    Vishal has high addiction to the human body parts,
+                    one of the rare blured image captured while he touching
+                    his male friend butt (Ass) 🍑
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- EVIDENCE 04 -->
+
+        <section class="evidence">
+
+            <div class="image">
+                <img src="image04.jpg" alt="Evidence 04">
+            </div>
+
+            <div class="content">
+                <span class="number">FILE 004</span>
+
+                <h2>Gay Shit</h2>
+
+                <p>
+                    A highly gayted Personality
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- EVIDENCE 05 -->
+
+        <section class="evidence">
+
+            <div class="image">
+                <img src="image5.jpg" alt="Evidence 05">
+            </div>
+
+            <div class="content">
+                <span class="number">FILE 005</span>
+
+                <h2>Corn ADDcition</h2>
+
+                <p>
+                    Rare fotage cought while watcing corn 🌽 in labs.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- EVIDENCE 06 -->
+
+        <section class="evidence">
+
+            <div class="image">
+                <img src="dog.gif" alt="Evidence 06">
+            </div>
+
+            <div class="content">
+                <span class="number"></span>
+
+                <h2>The End</h2>
+
+                <p>
+                    Ragebaited successfuly
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- MUSIC SCRIPT -->
+
+    <script>
+
+        const music = document.getElementById("background-music");
+        const musicControl = document.getElementById("music-control");
+
+        let playing = false;
+
+
+        // Try autoplay
+
+        music.volume = 0.35;
+
+        music.play()
+            .then(() => {
+                playing = true;
+                musicControl.textContent = "MUSIC: ON";
+            })
+            .catch(() => {
+                playing = false;
+                musicControl.textContent = "MUSIC: OFF";
+            });
+
+
+        // Start music on first click if autoplay was blocked
+
+        document.addEventListener("click", () => {
+
+            if (!playing) {
+
+                music.play();
+
+                playing = true;
+
+                musicControl.textContent = "MUSIC: ON";
+            }
+
+        }, { once: true });
+
+
+        // Music ON / OFF button
+
+        musicControl.addEventListener("click", (event) => {
+
+            event.stopPropagation();
+
+            if (music.paused) {
+
+                music.play();
+
+                playing = true;
+
+                musicControl.textContent = "MUSIC: ON";
+
+            } else {
+
+                music.pause();
+
+                playing = false;
+
+                musicControl.textContent = "MUSIC: OFF";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
